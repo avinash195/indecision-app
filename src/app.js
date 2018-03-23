@@ -10,6 +10,23 @@ class IndecisionApp extends React.Component {
 		this.deleteOption = this.deleteOption.bind(this);
 	}
 
+	componentDidMount() {
+		try {
+			const json = localStorage.getItem('options');
+			const options = JSON.parse(json);
+
+			if(options) {
+				this.setState(() => ({ options }));
+			}
+		} catch(e) {
+			// Do nothing
+		}
+		
+	}
+	componentDidUpdate() {
+		const json = JSON.stringify(this.state.options);
+		localStorage.setItem('options', json);
+	}
 	pickOption() {
 		let random = Math.floor(Math.random() * this.state.options.length);
 		let option = this.state.options[random];
@@ -83,6 +100,7 @@ const Options = (props) => {
 	return (
 		<div>
 		<button onClick={props.deleteOptions}>Remove All</button>
+		{ props.options.length === 0 && <p>Please enter some options to get started!</p>}
 			{props.options.map(option => (
 				<Option
 				key={option}
@@ -117,6 +135,10 @@ class AddOption extends React.Component {
 
 		const error = this.props.handleAddOptions(option);
 		this.setState(() => ({error}));
+
+		if(!error) {
+			e.target.elements.option.value = '';
+		}
 	}
 
 	render() {
