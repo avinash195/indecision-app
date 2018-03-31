@@ -21,7 +21,7 @@ button:disabled {
 .header {
   background: $off-black;
   color: white;
-  margin-bottom: $xl-size;
+  margin-bottom: $s-size;
   padding: $m-size;
 }
 
@@ -37,6 +37,13 @@ button:disabled {
   margin: 0;
 }
 
+@media (min-width: $desktop-breakpoint) {
+  .header {
+    margin-bottom: $xl-size;
+  }
+
+}
+
 .container {
   max-width: 60rem;
   margin: 0 auto;
@@ -50,9 +57,15 @@ button:disabled {
   color: white;
   font-weight: bold;
   font-size: $l-size;
-  margin-bottom: $xl-size;
+  margin-bottom: $s-size;
   padding: 2.4rem;
   width: 100%;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .big-button {
+    margin-bottom: $xl-size;
+  }
 }
 
 .big-button:disabled {
@@ -123,6 +136,7 @@ button:disabled {
 
 .add-option {
   display: flex;
+  flex-direction: column;
   padding: $m-size;
 }
 
@@ -132,8 +146,18 @@ button:disabled {
   border-bottom: .3rem solid darken($dark-blue, 10%);
   color: $off-white;
   flex-grow: 1;
-  margin-right: $s-size;
+  margin: 0 0 $s-size 0;
+ // margin-right: $s-size;
   padding: $s-size;
+}
+
+@media (min-width: $desktop-breakpoint) {
+  .add-option {
+    flex-direction: row;
+  }
+  .add-option__input {
+    margin: 0 $s-size 0 0;
+  }
 }
 
 .ReactModalPortal > div {
