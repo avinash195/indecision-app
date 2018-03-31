@@ -1,0 +1,177 @@
+@import './_settings';
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background: $dark-blue;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: $m-size;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+.header {
+  background: $off-black;
+  color: white;
+  margin-bottom: $xl-size;
+  padding: $m-size;
+}
+
+.header__title {
+  font-size: $l-size;
+  margin: 0;
+}
+
+.header__subtitle {
+  color: $off-white;
+  font-size: $m-size;
+  font-weight: 500;
+  margin: 0;
+}
+
+.container {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 $m-size;
+}
+
+.big-button {
+  background: $purple;
+  border: none;
+  border-bottom: .6rem solid darken($purple, 10%);
+  color: white;
+  font-weight: bold;
+  font-size: $l-size;
+  margin-bottom: $xl-size;
+  padding: 2.4rem;
+  width: 100%;
+}
+
+.big-button:disabled {
+  opacity: .5;
+}
+
+.button {
+  background: $purple;
+  border: none;
+  border-bottom: .3rem solid darken($purple, 10%);
+  color: white;
+  font-weight: 500;
+  padding: $s-size;
+}
+
+.button--link {
+  background: none;
+  border: none;
+  color: $off-white;
+  padding: 0;
+}
+
+.widget {
+  background: $light-blue;
+  margin-bottom: $xl-size;
+}
+
+.widget__message {
+  border-bottom: 1px solid lighten($light-blue, 10%);
+  color: $off-white;
+  margin: 0;
+  padding: $l-size;
+  text-align: center;
+}
+.widget-header {
+  background: $blue;
+  color: $off-white;
+  display: flex;
+  justify-content: space-between;
+  padding: $m-size;
+}
+
+.widget-header__title {
+  margin: 0;
+}
+
+.option {
+  border-bottom: 1px solid lighten($light-blue, 10%);
+  display: flex;
+  justify-content: space-between;
+  padding: $l-size $m-size;
+}
+
+.option__text {
+  color: white;
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 0;
+  word-break: break-all;
+}
+
+.add-option-error {
+  color: $off-white;
+  font-style: italic;
+  margin: $m-size 0 0 0;
+  padding: 0 $m-size;
+}
+
+.add-option {
+  display: flex;
+  padding: $m-size;
+}
+
+.add-option__input {
+  background: $dark-blue;
+  border: none;
+  border-bottom: .3rem solid darken($dark-blue, 10%);
+  color: $off-white;
+  flex-grow: 1;
+  margin-right: $s-size;
+  padding: $s-size;
+}
+
+.ReactModalPortal > div {
+  opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  transition: opacity 200ms ease-in-out;
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+  opacity: 1;
+}
+
+.ReactModalPortal .ReactModal__Overlay--before-close {
+  opacity: 0;
+}
+
+.modal {
+  background: $light-blue;
+  color: white;
+  max-width: 30rem;
+  outline: none;
+  padding: $l-size;
+  text-align: center;
+}
+
+.modal__title {
+  margin: 0 0 $m-size 0;
+}
+
+.modal__body {
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 0 0 $l-size 0;
+  word-break: break-all;
+}
+
